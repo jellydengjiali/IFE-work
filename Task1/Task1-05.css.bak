@@ -3,7 +3,7 @@ body{
 	margin:0;
 	padding:0;
 	overflow:auto;
-/* 	position:relative; */
+	position:relative;
 }
 .top{
 	background-color:#333333;
@@ -86,6 +86,7 @@ body{
 	border:1px solid #CECECE;
 	width:150px;
 	height:150px;
+	float:left;
 }
 .div4 p{
 	font-size:5px;
@@ -140,7 +141,7 @@ tr,td,th{
 /* 右侧 */
 .div6{
 	width:365px;
-	float:right;
+/* 	float:right; */
 	margin-left:20px;
 	margin-right:20px;
 	border-right:2px solid gray;
@@ -148,6 +149,9 @@ tr,td,th{
 	background-color:#ffffff;
 	font-size:15px;
 	padding:40px 20px 40px 20px;
+	position:absolute;
+	right:0px;
+	top:85px;
 }
 .div6 h3{
 	border-left:4px solid #cccccc;
