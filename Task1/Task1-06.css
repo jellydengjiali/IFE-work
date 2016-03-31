@@ -75,6 +75,7 @@ font-family:"Microsoft Yahei";
 }
 #text1{
 color:#000000;
+overflow:hidden;
 }
 .large{
 	font-size:24px;	
@@ -326,13 +327,14 @@ font-size:12px;
 color:#5a5b5b;
 font-style:oblique;
 }
+
 .redback{
 width:260px;
 height:160px;
 background-color:#d45d5c;
 margin-top:43px;
-
 }
+
 #zero{
 font-size:110px;
 font-family:"Microsoft Yahei";
