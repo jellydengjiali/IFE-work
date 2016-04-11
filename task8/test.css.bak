@@ -1,0 +1,80 @@
+.grid-container {
+	width:100%;
+	max-width:768px;
+	outline:1px solid #999;
+	padding:20px;
+}
+ /*-- our cleafix hack -- */ 
+.row:before,.row:after{
+	content:"";
+	display:table;
+	clear:both;
+/* 	margin-bottom:20px; */
+/*     margin:20px; */
+}
+[class*='col-'] {
+	float:left;
+	   
+	width:8.33%;
+	 /*-- our gutter --*/
+
+}
+/*-- setting border box on all elements inside the grid --*/
+.grid-container *{
+        box-sizing: border-box; 
+ }
+
+.col-1{
+        width:8.33%; 
+ }
+ .col-2{
+        width: 16.66%; 
+  }
+ .col-3{
+        width: 24.99%; 
+  }
+ .col-4{
+        width: 33.32%;
+  }
+  .col-5{
+        width: 41.65%;
+  }
+  .col-6{
+        width: 50%;
+   }
+  .col-8{
+        width: 16.66%;
+   }
+     .col-12{
+        width: 33.32%;
+   }
+   
+.inner{
+    margin:20px;
+    min-height:50px; 
+   	outline:1px solid #999;
+	background-color: #eee; 
+	 text-align: center; 
+     color: red;
+   }
+.inner p{
+   padding-top:15px;
+   }
+
+/*-- some extra column content styling --*/
+/* [class*='col-'] > p {
+     margin-top:20px;
+     text-align: center; 
+     color: red; 
+    } */
+@media all and (max-width:768px){
+        .col-1{ width: 16.66%;    }
+        .col-2{ width: 24.99%;        }
+        .col-3{ width: 24.99%;   }
+        .col-4{ width: 50%;    }
+        .col-5{ width: 100%;   }
+        .col-6{  width: 24.99%;  }
+		.col-8{  width: 66.64%;   }
+		.col-12{ width: 100%;  }
+ 
+    }
