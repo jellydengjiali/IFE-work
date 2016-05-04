@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用js打印星星形状</title>
+</head>
+	<!--   * 1
+	 *** 2*2-1
+	***** 2*3-1
+	……
+  ********** 2*n-1 -->
+<body>
+	<script language="javascript">
+	// document.writeln("&nbsp");
+	// document.writeln("×");
+	// document.writeln("<br/>");
+	// document.writeln("×××");
+		var n=window.prompt()
+		//金字塔
+		document.writeln("金字塔</br>");
+		for (var i = 1;i <= n; i++) {
+			for (var j = 1; j <=n-i; j++) {
+				document.writeln("&nbsp");
+			}
+		for (var j = 1; j<=2*i-1; j++) {
+				document.writeln("×");
+			}
+		document.writeln("<br/>");
+		}
+	document.writeln("--------------------------------------------</br>");	
+//空心金字塔
+	document.writeln("空心金字塔</br>");
+		for (var i = 1;i <=n; i++) {
+			for (var k = 1; k <=n-i; k++) {
+				document.writeln("&nbsp");
+			}
+		for(var j=1;j<=(2*i-1);j++){
+		if(i==n){
+			document.writeln("×");
+		}else if(j==1||j==(2*i-1)){
+			document.writeln("×");
+		}else{
+			document.writeln("&nbsp");
+		}
+	}
+		document.writeln("<br/>");
+		}
+
+document.writeln("--------------------------------------------</br>");
+	
+	//菱形
+//top
+	document.writeln("菱形</br>");
+		for (var i = 1;i <=n-1; i++) {
+			for (var k = 1; k <=n-i; k++) {
+				document.writeln("&nbsp");
+			}
+		for(var j=1;j<=(2*i-1);j++){
+		if(j==1||j==(2*i-1)){
+			document.writeln("×");
+		}else{
+			document.writeln("&nbsp");
+		}
+	}
+		document.writeln("<br/>");
+		}
+// 	//bottom
+	for (var i = 1;i <=n; i++) {
+			for (var k = 2; k <=i; k++) {
+				document.writeln("&nbsp");
+			}
+		for(var j=1;j<=(n-i)*2+1;j++){
+			if(j==1||j==(n-i)*2+1){
+				document.writeln("×");
+			}else{
+				document.writeln("&nbsp");
+			}		
+	}
+	document.writeln("<br/>");
+}
+	</script>
+</body>
+</html>
