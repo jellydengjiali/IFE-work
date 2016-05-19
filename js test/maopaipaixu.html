@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>j矩阵转置</title>
+</head>
+<body>
+  
+<script language="javascript">
+ var arr=[5,0,-56,900,12];
+ //大的排序次数（arr.length-1)
+ for(var i=0;i<arr.length-1;i++){
+ 	for(var j=0;j<arr.length-1-i;j++){
+      if(arr[j]>arr[j+1]){
+      	var temp=arr[j];
+      	arr[j]=arr[j+1];
+      	arr[j+1]=temp;
+      }
+ 	}
+ }
+ for(i=0;i<arr.length;i++){
+ 	document.writeln(arr[i]+"&nbsp;");
+ }
+</script>
+</body> 
+
+</html>
+
+	</script>
+</body>
+</html>
