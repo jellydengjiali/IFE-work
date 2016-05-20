@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>二分查找</title>
+</head>
+<body>
+  
+<script language="javascript">
+ var arr=[1,4,6,8,9,90,800];
+
+ for(var i=0;i<arr.length;i++){
+   document.write(arr[i]+"&nbsp")
+ }
+   document.write("</br>");
+ //思路：找到数组的中间数（midval），和你要查找的数（findval）进行比较，如果midval>findval则说明findval在数组的左边,就把该数组二分（就只在左边查找）
+
+ function binarySearch(arr,findVal,leftIndex,rightIndex){
+   //防止无穷递归
+  if(leftIndex>rightIndex){
+    //提示找不到
+    document.write("not find");
+  }
+  //找到中间这个值
+
+  var midIndex=Math.floor((leftIndex+rightIndex)/2);
+  var midVal=arr[midIndex];
+  //比较
+  if(midVal>findVal){
+    //在左边找
+    binarySearch(arr,findVal,leftIndex,midIndex-1);
+  }else if(midVal<findVal){
+    //在右边找
+    binarySearch(arr,findVal,midIndex+1,rightIndex);
+  }else{
+    document.write("找到 下标为"+midIndex);
+    return;
+  }
+ }
+
+  var a=prompt("请输入你要查找的数：");
+ binarySearch(arr,a,0,arr.length-1);
+</script>
+</body> 
+
+</html>
+
+	</script>
+</body>
+</html>
