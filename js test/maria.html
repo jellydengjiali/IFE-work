@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>超级玛丽小游戏</title>
+	<link href="maria.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" language="javascript">
+     //设计maria类
+     function Maria(){
+     	this.x=0;
+     	this.y=0;
+
+     	//移动 0 上  1 右  2 下  3 左
+     	this.move=function(direct){
+     		switch(direct){
+     		case 1:
+     		// window.alert("右移动");
+     		//为了改变img的top和left值，需要得到img元素
+     		var mymaria=document.getElementById('mymaria');
+     		var left=mymaria.style.left;
+     		left=parseInt(left.substr(0,left.length-2));//px占两个字符
+     		mymaria.style.left=(left+10)+"px";
+     		break;
+     		case 0:
+     		var mymaria=document.getElementById('mymaria');
+     		var top=mymaria.style.top;
+     		top=parseInt(top.substr(0,top.length-2));//px占两个字符
+     		mymaria.style.top=(top-10)+"px";
+     		break;
+     		case 2:
+     		var mymaria=document.getElementById('mymaria');
+     		var top=mymaria.style.top;
+     		top=parseInt(top.substr(0,top.length-2));//px占两个字符
+     		mymaria.style.top=(top+10)+"px";
+     		break;
+     		case 3:
+     		var mymaria=document.getElementById('mymaria');
+     		var left=mymaria.style.left;
+     		left=parseInt(left.substr(0,left.length-2));//px占两个字符
+     		mymaria.style.left=(left-10)+"px";
+     		break;
+     	}
+     }
+    }
+
+     var maria=new Maria();
+
+     function mariaMove(direct){
+     	switch(direct){
+     		case 1:
+     		maria.move(direct);
+     		break;
+     		case 0:
+     		maria.move(direct);
+     		break;
+     		case 2:
+     		maria.move(direct);
+     		break;
+     		case 3:
+     		maria.move(direct);
+     		break;
+     	}
+
+     }
+	</script>
+</head>
+<body>
+
+<div class="game">
+<img id="mymaria" style="top:50px;left:50px;" src="xiaomei.jpg" />
+<img style="top:200px;left:280px;" src="xiaoshuai.jpg" />
+</div>
+<table class="control">
+<tr><td colspan="3">控制方向</td></tr>
+<tr><td>**</td><td><input type="button" value="↑↑" onclick="mariaMove(0)"/></td><td></td></tr>
+<tr><td><input type="button" value="←←" onclick="mariaMove(3)" /></td><td>**</td><td><input type="button" value="→→" onclick="mariaMove(1)" /></td></tr>
+<tr><td></td><td><input type="button" value="↓↓" onclick="mariaMove(2)" /></td><td></td></tr>
+	
+
+
+</table>
+</body>
+</html>
