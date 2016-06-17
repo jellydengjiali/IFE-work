@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>用户信息注册</title>
+        <meta name="author" content="Jelly">
+		<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+   <style>
+.srout{
+   
+ 	margin-top:30px;	
+   	
+   }	
+#searchResult{
+  	width:90%;
+   	height:300px;
+ }	
+    
+ #food{
+   	color:#fff;
+   	font-family:"STXingkai";
+}	
+   </style>
+    </head>
+
+    <body>
+
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="logo span4">
+                        <h1><a href="">用户信息</a></h1>
+                    </div>
+                    <div class="links span8">
+                        <a class="home" href="" rel="tooltip" data-placement="bottom" data-original-title="主页"></a>
+                        <a class="blog" href="" rel="tooltip" data-placement="bottom" data-original-title="关于我们"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<div class="register-container container">
+            <div class="row">		
+                <div class="register span6">
+                    
+					 <div id="form">
+							<label for="username">用户ID</label>
+                        	<input type="text" id="keyword" name="username" placeholder="请输入你的用户ID">
+						<button type="submit" id="search">查询</button>
+						<div class="srout">
+						<label for="username">用户信息查询结果</label>
+                        <textarea rows="3" cols="20" placeholder="用户信息查询结果" id="searchResult">
+                        </textarea>
+						</div>	
+					</div>			
+                 	
+                </div>	
+
+            </div>
+        </div>
+
+	<div align="center" id="food">Powered by Jelly at NGHCI Lab in SCUT</div>
+ <!-- Javascript -->
+<script>
+document.getElementById("search").onclick=function(){
+ //发送ajax查询请求并处理
+ var request=new XMLHttpRequest();
+ request.open("GET","service.php?number="+document.getElementById("keyword").value);
+ request.send();
+ request.onreadystatechange=function(){
+  if(request.readyState===4){
+  if(request.status===200){
+  document.getElementById("searchResult").innerHTML=request.responseText;
+  }else{
+  alert("发生错误:"+request.status);
+  }
+  }
+ }
+}
+
+</script>
+    
+        <script src="assets/js/jquery-1.8.2.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+</body>
+</html>

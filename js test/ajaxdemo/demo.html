@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Demo</title>
+<style>
+*{
+font-aize:30px;
+line-height:1.8;
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+<h1>用户信息查询</h1>
+<label>请输入用户ID：</label>
+<input type="text" id="keyword"/>
+<button id="search">查询</button>
+<h3>用户查询结果:</h3>
+<textarea rows="3" cols="20" id="searchResult">
+</textarea>
+
+<h1>用户信息创建</h1>
+<label>请输入用户姓名: </label>
+<input type="text" id="userName"/><br>
+<label>请输入用户编号: </label>
+<input type="text" id="userNumber"/><br>
+<label>请选择用户性别: </label>
+<select id="userSex">
+<option>男</option>
+<option>女</option>
+</select><br>
+<label>请输入用户身份: </label>
+<input type="text" id="userJob"/>
+<button id="save">保存</button></br>
+<h3>用户信息创建结果：</h3>
+<p id="creatResult"></p>
+
+
+<script>
+document.getElementById("search").onclick=function(){
+ //发送ajax查询请求并处理
+ var request=new XMLHttpRequest();
+ request.open("GET","service.php?number="+document.getElementById("keyword").value);
+ request.send();
+ request.onreadystatechange=function(){
+  if(request.readyState===4){
+  if(request.status===200){
+  document.getElementById("searchResult").innerHTML=request.responseText; 
+  
+  }else{
+  alert("发生错误:"+request.status);
+  }
+  }
+ }
+}
+
+document.getElementById("save").onclick=function(){
+ //发送ajax新建请求并处理
+ var request=new XMLHttpRequest();
+ request.open("POST","service.php");
+ var data="name="+document.getElementById("userName").value+"&number="+document.getElementById("userNumber").value+"&sex="+document.getElementById("userSex").value+"&job="+document.getElementById("userJob").value;
+ request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+ request.send(data);
+ request.onreadystatechange=function(){
+  if(request.readyState===4){
+  if(request.status===200){
+  document.getElementById("creatResult").innerHTML=request.responseText;
+  }else{
+  alert("发生错误:"+request.status);
+  }
+  }
+ }
+}
+
+
+
+</script>
+</body>
+</html>
