@@ -1,0 +1,49 @@
+<!Doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>动态创建html元素</title>
+    <style  type="text/css">
+      #box{
+        border: 1px solid red;
+        width:100px;
+        height: 200px;
+      }
+    </style>
+    <script language="javascript" type="text/javascript">
+      function test1(){
+        //创建元素
+        var myElement=document.createElement("a");//希望创建的html元素标签名
+        //给新的元素添加必要的信息
+        myElement.href="https://www.baidu.com";
+        myElement.innerText="连接到百度";
+        myElement.id="id1";
+        // myElement.style.left="200px";
+        // myElement.style.top="100px";
+        // myElement.style.position="absolute";
+        //
+        // //添加到document.body
+        // document.body.appendChild(myElement);
+        document.getElementById('box').appendChild(myElement);
+      }
+
+      function test2(){
+        //删除一个元素
+        var dele=document.getElementById('id1');
+        document.getElementById('box').removeChild(dele);
+        //2
+        // dele.parentNode.removeChild(dele);
+      }
+
+
+    </script>
+  </head>
+  <body>
+
+    <input type="button" onclick="test1()" value="动态的创建一个超链接"/>
+    <input type="button" onclick="test2()" value="删除一个超链接"/>
+    <div id="box">
+    </div>
+
+  </body>
+</html>
