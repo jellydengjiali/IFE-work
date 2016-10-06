@@ -1,0 +1,54 @@
+
+<html>
+<head>
+  <meta charset="utf-8" content-type="text/html"/>
+    <title>小太阳</title>
+      <script language="javascript">
+      //定义全局变量
+      var directX=1;//x轴方向
+      var directY=1;//y轴方向
+      var sunX=0;// 小太阳的坐标x
+      var sunY=0;//小太阳的坐标y
+
+      function sunMove(){
+       sunX+=directX;
+       sunY+=directY;
+       //修改div的left top
+       sun.style.top=sunY+"px";
+       sun.style.left=sunX+"px";
+       //判断什么时候转变方向
+       //x方向 offfsetWidth放回当前对象的实际宽度
+       if(sunX+sun.offsetWidth>=document.body.clientWidth||sunX<=0){
+
+           directX=-directX;
+       }
+       //判断y的方向
+       if(sunY+sun.offsetHeight>=document.body.clientHeight||sunY<=0){
+
+           directY=-directY;
+       }
+   }
+      setInterval("sunMove()",5);
+      </script>
+      <style type="text/css">
+        body{
+          background-image: url('image/fengche.jpg');
+        }
+        #sun{
+          position: absolute;
+        }
+        #sun img{
+           width: 50px;
+           height: 50px;
+
+
+        }
+
+      </style>
+</head>
+  <body>
+    <div id="sun">
+    <img src="image/sun.jpg"/>
+    </div>
+  </body>
+</html>
