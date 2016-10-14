@@ -3,28 +3,106 @@
 <head>
   <meta charset="utf-8" content-type="text/html"/>
     <title>坦克大战</title>
-      <script language="javascript">
 
-      </script>
       <style type="text/css">
        #tank{
          background-image: url("image/tank.png");
          width: 70px;
          height: 60px;
-         background-position-y: 60px;
-         /*从下面开始往上计算y坐标 从0开始往下计算60px的坐标*/
+         position: absolute;
+       }
+       #filed{
+         background-color: black;
+         width:500px;
+         height:400px;
+         position:absolute;
        }
       </style>
 </head>
-  <body>
+  <body onkeydown="dosomething(event)">
+    <div id="filed">
+
     <div id="tank">
     </div>
-    <input type="button" value="up" onclick="change(this)"/>
+    <!-- <input type="button" value="up" onclick="change(this)"/>
     <input type="button" value="down" onclick="change(this)"/>
     <input type="button" value="left" onclick="change(this)"/>
     <input type="button" value="right" onclick="change(this)"/>
-    <div>
+    <div> -->
 
     </div>
+    <script language="javascript" type="text/javascript">
+    // //切换背景图来换坦克方向
+    // function change(obj) {
+    //   if(obj.value=="up"){
+    //     tank.style.backgroundPositionY="50px";//驼峰式方法
+    //   }else if(obj.value=="down"){
+    //     tank.style.backgroundPositionY="0px";
+    //   }else if(obj.value=="left"){
+    //     tank.style.backgroundPositionY="220px";
+    //   }else if(obj.value=="right"){
+    //     tank.style.backgroundPositionY="135px";
+    //   }
+    //
+    // }
+
+    //用面向对象的方法开发web版本的坦克大战1.0（可以通过asdw键来控制坦克的走向）
+        function MyTank(x,y,direct){
+          this.x=x;//坦克的横坐标
+          this.y=y;//坦克的纵坐标
+          this.direct=direct;//方向
+          this.speed=2;//速度
+          //初始化
+          tank.style.left=this.x+"px";
+          tank.style.top=this.y+"px";
+          tank.style.backgroundPositionY="50px";
+          //event表示按键事件
+          this.move=function move(event){
+            //a 表示左 3
+            //s 下 2
+            //d 右 1
+            //w 上 0
+            switch (event.keyCode) {
+              case 65:
+              //a
+                this.x-=this.speed;
+                this.direct=3;
+                tank.style.backgroundPositionY="220px";
+                break;
+              case 83:
+              //s
+                this.y+=this.speed;
+                this.direct=2;
+                tank.style.backgroundPositionY="0px";
+                break;
+              case 68:
+              //d
+                this.x+=this.speed;
+                this.direct=1;
+                tank.style.backgroundPositionY="135px";
+                break;
+              case 87:
+              //w
+                this.y-=this.speed;
+                this.direct=0;
+                tank.style.backgroundPositionY="50px";
+                break;
+
+
+            }
+            //统一改变位置
+            tank.style.left=this.x+"px";
+            tank.style.top=this.y+"px";
+          }
+        }
+        //判断用户想调用哪个函数
+        function dosomething(evevt) {
+          if(event.keyCode==65||event.keyCode==68||event.keyCode==83||event.keyCode==87){
+          hero.move(event);
+            }
+        }
+        //创建坦克
+        var hero= new MyTank(200,350,0);
+    </script>
   </body>
 </html>
