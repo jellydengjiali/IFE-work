@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="sohu.css" type="text/css" />
+    <script language="javascript">
+      function change(val,obj) {
+        if(val=='zs'){
+          obj.style.backgroundColor="#FFC12D";
+          zs.style.display='block';
+          rz.style.display='none';
+          cg.style.display='none';
+        }else if(val=='rz'){
+          obj.style.backgroundColor="#FFC12D";
+          zs.style.display='none';
+          rz.style.display='block';
+          cg.style.display='none';
+        }else if(val=='cg'){
+          obj.style.backgroundColor="#FFC12D";
+          zs.style.display='none';
+          rz.style.display='none';
+          cg.style.display='block';
+        }
+
+      }
+      function recover(obj){
+        obj.style.backgroundColor="silver";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="div1">
+        <div class="navi">
+          <ul>
+            <li   onmouseover="change('zs',this)" onmouseout="recover(this)">招生</li>
+            <li   onmouseover="change('rz',this)" onmouseout="recover(this)">热招</li>
+            <li   onmouseover="change('cg',this)" onmouseout="recover(this)">出国</li>
+          </ul>
+        </div>
+        <!--超链接div  -->
+        <div id="zs" class="zs" >
+          <ul>
+            <li><a href='#'>1111111111111111</a></li>
+            <li><a href='#'>1111111111111111</a></li>
+            <li><a href='#'>1111111111111111</a></li>
+            <li><a href='#'>1111111111111111</a></li>
+            <li><a href='#'>1111111111111111</a></li>
+            <li><a href='#'>1111111111111111</a></li>
+            <li><a href='#'>1111111111111111</a></li>
+            <li><a href='#'>1111111111111111</a></li>
+          </ul>
+        </div>
+        <div id="rz"class="rz" >
+          <ul>
+            <li><a href='#'>2222222222222222</a></li>
+            <li><a href='#'>2222222222222222</a></li>
+            <li><a href='#'>2222222222222222</a></li>
+            <li><a href='#'>2222222222222222</a></li>
+            <li><a href='#'>2222222222222222</a></li>
+            <li><a href='#'>2222222222222222</a></li>
+            <li><a href='#'>2222222222222222</a></li>
+            <li><a href='#'>2222222222222222</a></li>
+          </ul>
+        </div>
+        <div id="cg" class="cg" >
+          <ul>
+            <li><a href='#'>3333333333333333</a></li>
+            <li><a href='#'>3333333333333333</a></li>
+            <li><a href='#'>3333333333333333</a></li>
+            <li><a href='#'>3333333333333333</a></li>
+            <li><a href='#'>3333333333333333</a></li>
+            <li><a href='#'>3333333333333333</a></li>
+            <li><a href='#'>3333333333333333</a></li>
+            <li><a href='#'>3333333333333333</a></li>
+          </ul>
+        </div>
+    </div>
+  </body>
+</html>

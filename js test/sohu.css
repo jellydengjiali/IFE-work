@@ -1,0 +1,55 @@
+body{
+  font-size: 12px;
+}
+
+.div1{
+  width: 132px;
+  height: 156px;
+  clear: both;
+}
+.navi{
+  width: 21px;
+  height: 156px;
+  float: left;
+
+}
+.navi ul{
+  padding: 0px;
+  margin: 0px;
+  margin-top: -3px;
+
+
+}
+.navi li{
+  list-style-type: none;
+  background-color: silver;
+  border-radius: 5px;
+  width: 21px;
+  height: 42px;
+  text-align: center;
+  margin-top: 3px;
+  padding-top: 8px;
+
+}
+.zs,.rz,.cg{
+  width: 105px;
+  height: 156px;
+  float: right;
+
+}
+.zs ul,.rz ul,.cg ul{
+  padding: 0px;
+  margin-top: -2px;
+
+}
+.zs ul li,.rz ul li,.cg ul li{
+  list-style-type: none;
+  line-height: 20px;
+}
+
+.rz{
+  display: none;
+}
+.cg{
+  display: none;
+}
