@@ -38,7 +38,16 @@ function getData() {
   /*
   coding here
   */
-   
+  var data=[];
+  var originlist=document.getElementById('source');
+
+  for (var i = 0; i < originlist.childElementCount; i++) {
+    var li=originlist.children[i];
+    var City=li.innerHTML.split("空气质量：")[0];
+    var Num=Number(li.children[0].innerHTML);
+    data.push([City,Num]);
+
+  }
   /*
   data = [
     ["北京", 90],
@@ -46,7 +55,6 @@ function getData() {
     ……
   ]
   */
-
   return data;
 
 }
@@ -57,16 +65,25 @@ function getData() {
  * 返回一个排序后的数组
  */
 function sortAqiData(data) {
-
+  data.sort(function(a,b){
+    return b[1]-a[1];//负的位置不变，正的交换位置
+  })
+  return data;
 }
 
 /**
  * render
  * 将排好序的城市及空气质量指数，输出显示到id位resort的列表中
  * 格式见ul中的注释的部分
+ <li>第一名：北京空气质量：<b>90</b></li>
  */
 function render(data) {
-
+  var newlist=[];
+  for (var i = 0; i < data.length; i++) {
+    var text="<li>"+"第"+i+1+"名:"+data[i][0]+"空气质量："+"<b>"+data[i][1]+"</b>"+"</li>";
+    newlist.push(text);
+  }
+  document.getElementById('resort').innerHTML=newlist.join(' ');
 }
 
 function btnHandle() {
@@ -79,7 +96,7 @@ function btnHandle() {
 function init() {
 
   // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
-
+  document.getElementById('sort-btn').onclick=btnHandle;
 }
 
 init();
