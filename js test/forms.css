@@ -1,0 +1,13 @@
+table input{
+  width:130px;
+}
+.td2{
+  width:300px;
+}
+.td1{
+  width:100px;
+}
+#span1,#span2,#span3{
+  color:red;
+  font-size: 10px;
+}
