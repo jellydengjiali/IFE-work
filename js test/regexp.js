@@ -26,10 +26,33 @@
 // }
 
 //index,leftContext,rightContext
+// function test(){
+//   var con=document.getElementById('content').value;
+//   var myReg=/(\d){4}/gi;
+//   while(res=myReg.exec(con)){
+//     window.alert("index="+RegExp.index+" left ="+RegExp.leftContext+"  right ="+RegExp.rightContext);
+//   }
+// }
+
+
+//
+// function test(){
+//   var con=document.getElementById('content').value;
+//   var myReg=/(\d)(\d)\2\1/gi;//abba
+//   var myReg2=/(\d)\1(\d)\2(\d)\3(\d)\4/gi;//aabbccdd
+//   var myReg3=/(\d){5}-(\d)\2\2(\d)\3\3(\d)\4\4/gi;//
+//   while(res=myReg.exec(con)){
+//     window.alert(res[0]);
+//   }
+// }
+
 function test(){
   var con=document.getElementById('content').value;
-  var myReg=/(\d){4}/gi;
-  while(res=myReg.exec(con)){
-    window.alert("index="+RegExp.index+" left ="+RegExp.leftContext+"  right ="+RegExp.rightContext);
+  var myReg=/^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/gi;
+  if(myReg.test(con)){
+    window.alert("true");
+  }else {
+    window.alert("flase");
   }
+
 }
