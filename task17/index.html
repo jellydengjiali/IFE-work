@@ -8,16 +8,15 @@
 <body>
   <fieldset id="form-gra-time">
     <legend>请选择日期粒度：</legend>
-    <label>
-      <span class="selected">日</span><input name="gra-time" value="day" type="radio" checked="checked"></label>
-    <label><span>月</span><input name="gra-time" value="week" type="radio"></label>
-    <label><span>年</span><input name="gra-time" value="month" type="radio"></label>
-  </fieldset>
-
-  <fieldset>
+    <div class="grade">
+    <label><input name="gra-time" value="day" type="radio" checked="checked" id="1"><span class="selected" for="1">日</span></label>
+    <label><input name="gra-time" value="week" type="radio" id="2"><span for="2">周</span></label>
+    <label><input name="gra-time" value="month" type="radio" id="3"><span for="3">月</span></label>
+  </div>
+<div class="select">
     <legend>请选择查看的城市：</legend>
-    <select id="city-select">
-      <option>北京</option>
+    <select id="city-select" class="citySelect">
+      <option>北 京</option>
     </select>
   </fieldset>
 
